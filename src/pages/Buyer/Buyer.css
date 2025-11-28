@@ -1,0 +1,377 @@
+
+.buyer-container {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(to bottom, #06205b, #5f89e8);
+  font-family: "Montserrat", sans-serif;
+}
+
+.buyer-sidebar {
+  width: 250px;
+  background: #061d55;
+  padding: 25px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.buyer-hello {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.buyer-username {
+  font-size: 12px;
+  opacity: 0.8;
+  margin-bottom: 20px;
+}
+
+.buyer-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.menu-item {
+  padding: 10px 14px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  background: #7ca6ff;
+  color: white;
+  font-weight: bold;
+}
+
+.menu-item.selected {
+  background: #c7d6ff;
+  color: #001d4a;
+}
+
+.buyer-arrow {
+  margin-top: auto;
+  align-self: center;
+  background: #7ca6ff;
+  padding: 12px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
+}
+
+
+.buyer-main {
+  flex: 1;
+  padding: 20px;
+}
+
+.buyer-header {
+  text-align: center;
+  background: #6f9aff;
+  width: 250px;
+  margin: 0 auto;
+  padding: 8px 20px;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+}
+
+
+.buyer-content {
+  margin-top: 40px;
+}
+
+.buyer-empty {
+  height: 400px;
+}
+
+
+.buyer-visualizar-box {
+  text-align: center;
+}
+
+.buyer-big-btn {
+  background: #7ca6ff;
+  padding: 10px 30px;
+  border-radius: 20px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+
+.buyer-view-tabs,
+.buyer-mini-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 10px 0;
+}
+
+.buyer-view-tabs button,
+.buyer-mini-tabs button {
+  background: #c7d6ff;
+  padding: 8px 18px;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+.buyer-info-box {
+  background: #061d55;
+  color: white;
+  width: 80%;
+  margin: 30px auto;
+  padding: 25px;
+  border-radius: 15px;
+  font-size: 16px;
+}
+
+
+.buyer-pedido-box table {
+  width: 100%;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.buyer-pedido-btn {
+  background: #7ca6ff;
+  padding: 8px 18px;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+.buyer-container.collapsed .buyer-sidebar {
+  width: 60px;
+  padding: 20px 10px;
+}
+
+.buyer-container.collapsed .buyer-menu button {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.buyer-container.collapsed .buyer-username,
+.buyer-container.collapsed .buyer-hello {
+  opacity: 0;
+}
+
+.buyer-container.collapsed .buyer-arrow {
+  margin-left: 5px;
+}
+
+
+.cadastro-pedido-box {
+  background: #061d55;
+  padding: 30px;
+  width: 90%;
+  margin: 10px auto;
+  border-radius: 12px;
+  color: white;
+}
+
+
+.cadastro-pedido-tabela {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 25px;
+  border-spacing: 20px 15px;
+}
+
+.cadastro-pedido-tabela th {
+  background: #7ca6ff;
+  padding: 8px 10px;
+  border-radius: 12px;
+  color: white;
+  font-size: 14px;
+}
+
+.cadastro-pedido-tabela input {
+  width: 120px;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  text-align: center;
+  font-size: 14px;
+}
+
+
+.imagem-importar {
+  margin-top: 20px;
+}
+
+.imagem-importar label {
+  background: white;
+  color: #001d4a;
+  padding: 10px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: bold;
+}
+
+.imagem-importar input {
+  display: none;
+}
+
+
+.btn-concluir {
+  background: #7ca6ff;
+  padding: 10px 20px;
+  border-radius: 15px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  float: right;
+  cursor: pointer;
+}
+
+
+.cadastro-geral-box {
+  background: #061d55;
+  width: 85%;
+  margin: 40px auto 0 auto;
+  padding: 40px;
+  border-radius: 20px;
+  color: white;
+}
+
+
+.linha-inputs {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+
+.linha-inputs input {
+  background: white;
+  border: none;
+  padding: 12px 15px;
+  border-radius: 12px;
+  width: 100%;
+  flex: 1;
+  font-size: 14px;
+  text-align: center;
+}
+
+
+.linha-inputs textarea {
+  background: white;
+  border: none;
+  padding: 12px 15px;
+  border-radius: 12px;
+  width: 100%;
+  height: 90px;
+  font-size: 14px;
+  resize: none;
+}
+
+
+.btn-salvar {
+  background: #7ca6ff;
+  padding: 12px 30px;
+  border-radius: 15px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  float: right;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+
+.cadastro-contato-box {
+  background: #061d55;
+  width: 85%;
+  margin: 40px auto 0 auto;
+  padding: 40px;
+  border-radius: 20px;
+  color: white;
+}
+
+
+.cadastro-contato-box .linha-inputs {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+
+.cadastro-contato-box input {
+  width: 100%;
+  background: white;
+  border: none;
+  padding: 12px 15px;
+  border-radius: 12px;
+  font-size: 14px;
+  text-align: center;
+  flex: 1;
+}
+
+.btn-adicionar {
+  background: #7ca6ff;
+  padding: 10px 25px;
+  border-radius: 15px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+.cadastro-endereco-box {
+  background: #061d55;
+  width: 85%;
+  margin: 40px auto 0 auto;
+  padding: 40px;
+  border-radius: 20px;
+  color: white;
+}
+
+
+.cadastro-endereco-box .linha-inputs {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+
+.cadastro-endereco-box input {
+  background: white;
+  border: none;
+  padding: 12px 15px;
+  border-radius: 12px;
+  font-size: 14px;
+  text-align: center;
+  flex: 1;
+}
+
+
+.cadastro-endereco-box .campo-grande {
+  width: 300px;
+  flex: none;
+}
+
+
+.btn-adicionar-endereco {
+  background: #7ca6ff;
+  padding: 10px 25px;
+  border-radius: 15px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  float: right;
+}
+

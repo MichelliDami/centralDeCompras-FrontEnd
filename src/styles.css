@@ -1,0 +1,249 @@
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  background-color: #f4f4f4;
+}
+
+.navbar {
+  background-color: #131313;
+  color: #fff;
+  padding: 1rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.navbar a:hover {
+  color: #ffcc00;
+}
+
+/* ======= CARROSSEL ======= */
+.carousel-container {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-bottom: 3px solid #ddd;
+  transition: opacity 0.6s ease-in-out;
+}
+
+/* Botões de navegação */
+.carousel-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  gap: 8px;
+}
+
+.carousel-buttons button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background-color: #ccc;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-buttons button:hover {
+  background-color: #999;
+}
+
+.carousel-buttons button.active {
+  background-color: #ffcc00;
+}
+
+/* ======= PRODUTOS ======= */
+.home {
+  text-align: center;
+  padding: 1rem 2rem;
+}
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem 4rem;
+}
+
+.product-card {
+  background: white;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.product-card h3 {
+  margin: 0.5rem 0;
+}
+
+.product-card button {
+  background-color: #ffcc00;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.product-card button:hover {
+  background-color: #f1b500;
+}
+
+/* ======= TELA DE CONTA / LOGIN ======= */
+.login-container {
+  background: linear-gradient(180deg, #0a2e91, #4a79ff);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.title-main {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+
+.login-box {
+  background-color: rgba(0, 24, 90, 0.9);
+  padding: 2.5rem 3rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  min-width: 320px;
+  transition: transform 0.3s ease;
+}
+
+.login-box:hover {
+  transform: translateY(-3px);
+}
+
+.login-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.login-subtext {
+  font-size: 0.95rem;
+  opacity: 0.9;
+  margin-bottom: 1rem;
+}
+
+.login-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.btn-login {
+  background-color: #4a79ff;
+  color: white;
+  border: none;
+  padding: 0.7rem 2rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  width: 180px;
+  transition: all 0.3s ease;
+}
+
+.btn-login:hover {
+  background-color: #385edb;
+  transform: scale(1.05);
+}
+
+
+/* ======= LOGIN FORM ======= */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 250px;
+}
+
+.input-login {
+  border: none;
+  border-radius: 20px;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  outline: none;
+  background-color: #f0f4ff;
+  color: #0a2e91;
+}
+
+.input-login:focus {
+  box-shadow: 0 0 6px #4a79ff;
+}
+
+.btn-login {
+  background-color: #4a79ff;
+  color: white;
+  border: none;
+  padding: 0.6rem 2rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  text-decoration: none;
+}
+
+.btn-login:hover {
+  background-color: #385edb;
+}
