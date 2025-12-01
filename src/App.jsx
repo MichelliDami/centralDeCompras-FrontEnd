@@ -4,7 +4,6 @@ import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import Buyer from "./pages/Buyer/Buyer";
 import Seller from "./pages/Seller/Seller";
-import Navbar from "./components/Navbar";
 
 // ADMIN
 import AdminDashboard from "./pages/Admin/AdminDashboard";
@@ -13,6 +12,12 @@ import CadastrarFornecedor from "./pages/Admin/CadastrarFornecedor";
 import CadastrarProduto from "./pages/Admin/CadastrarProduto";
 import GerarUsuarios from "./pages/Admin/GerarUsuarios";
 import GerarSenhas from "./pages/Admin/GerarSenhas";
+import TodosFornecedores from "./pages/Admin/TodosFornecedores";
+import TodosLogistas from "./pages/Admin/TodosLogistas";
+
+
+
+
 
 function AppContent() {
   const location = useLocation();
@@ -29,8 +34,7 @@ function AppContent() {
 
   return (
     <>
-      {!shouldHideNavbar && <Navbar />}
-
+    
       <Routes>
         {/* PÁGINAS PRINCIPAIS */}
         <Route path="/" element={<Home />} />
@@ -45,6 +49,12 @@ function AppContent() {
         <Route path="/admin/cadastrar-produto" element={<CadastrarProduto />} />
         <Route path="/admin/gerar-usuarios" element={<GerarUsuarios />} />
         <Route path="/admin/gerar-senhas" element={<GerarSenhas />} />
+        <Route path="/admin/todos-logistas" element={<TodosLogistas />} />
+        <Route path="/admin/todos-fornecedores" element={<TodosFornecedores />} />
+        
+
+
+
       </Routes>
     </>
   );
