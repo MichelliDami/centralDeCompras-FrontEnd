@@ -1,5 +1,3 @@
-
-
 .seller-container {
   display: flex;
   width: 100%;
@@ -8,7 +6,7 @@
   font-family: "Montserrat", sans-serif;
 }
 
-
+/* SIDEBAR */
 .seller-sidebar {
   width: 280px;
   background: #041a4b;
@@ -18,10 +16,12 @@
   transition: 0.3s;
 }
 
+/* SIDEBAR FECHADA */
 .seller-sidebar.closed {
   width: 80px;
 }
 
+/* TÍTULOS */
 .seller-hello {
   font-size: 28px;
   font-weight: bold;
@@ -34,6 +34,7 @@
   margin-bottom: 25px;
 }
 
+/* MENU */
 .seller-menu {
   display: flex;
   flex-direction: column;
@@ -50,6 +51,7 @@
   cursor: pointer;
   transition: 0.2s;
   text-align: left;
+  font-size: 16px; /* NORMAL */
 }
 
 .menu-item:hover {
@@ -61,7 +63,22 @@
   color: #001d4e;
 }
 
+/* --- MENU FECHADO (FUNCIONANDO AGORA) --- */
+.seller-sidebar.closed .menu-item {
+  padding: 12px 0;
+  text-align: center;
+  font-size: 0 !important; /* ESCONDE TEXTO */
+  border-radius: 30px;
+}
 
+/* VOLTA O TEXTO QUANDO ABRIR */
+.seller-sidebar:not(.closed) .menu-item {
+  font-size: 16px !important;
+  padding: 12px 18px;
+  text-align: left;
+}
+
+/* BOTÃO DE ABRIR/FECHAR */
 .seller-arrow {
   position: absolute;
   bottom: 30px;
@@ -82,13 +99,12 @@
   background: #8bb8ff;
 }
 
-
+/* CONTEÚDO PRINCIPAL */
 .seller-main {
   flex: 1;
   padding: 40px 60px;
   color: white;
 }
-
 
 .seller-header {
   display: flex;
@@ -115,7 +131,15 @@
   text-decoration: underline;
 }
 
-
 .seller-content {
   margin-top: 20px;
+}
+/* MENU FECHADO - texto continua aparecendo, mas ajustado */
+.seller-sidebar.closed .menu-item {
+  padding: 8px 5px;           /* botão menor */
+  font-size: 12px !important; /* texto menor */
+  text-align: center;         /* centraliza */
+  white-space: nowrap;        /* impede quebra */
+  overflow: hidden;           /* impede texto escapar */
+  text-overflow: ellipsis;    /* adiciona "..." se precisar */
 }

@@ -5,7 +5,9 @@
   width: 100%;
   background: linear-gradient(to bottom, #06205b, #5f89e8);
   font-family: "Montserrat", sans-serif;
+  transition: 0.3s;
 }
+
 
 .buyer-sidebar {
   width: 250px;
@@ -15,18 +17,16 @@
   display: flex;
   flex-direction: column;
   position: relative;
+  transition: 0.3s ease;
 }
 
-.buyer-hello {
-  font-size: 28px;
-  font-weight: bold;
+
+.buyer-container.collapsed .buyer-sidebar {
+  width: 80px;
+  padding: 25px 10px;
 }
 
-.buyer-username {
-  font-size: 12px;
-  opacity: 0.8;
-  margin-bottom: 20px;
-}
+
 
 .buyer-menu {
   display: flex;
@@ -42,12 +42,15 @@
   background: #7ca6ff;
   color: white;
   font-weight: bold;
+  transition: 0.2s;
+  width: 100%;
 }
 
 .menu-item.selected {
   background: #c7d6ff;
   color: #001d4a;
 }
+
 
 .buyer-arrow {
   margin-top: auto;
@@ -59,6 +62,11 @@
   cursor: pointer;
   font-weight: bold;
   color: white;
+  transition: 0.2s;
+}
+
+.buyer-arrow:hover {
+  background: #9bb8ff;
 }
 
 
@@ -70,104 +78,44 @@
 .buyer-header {
   text-align: center;
   background: #6f9aff;
-  width: 250px;
+  width: 260px;
   margin: 0 auto;
-  padding: 8px 20px;
+  padding: 10px 22px;
   border-radius: 20px;
   color: white;
   font-weight: bold;
 }
 
 
-.buyer-content {
-  margin-top: 40px;
-}
-
-.buyer-empty {
-  height: 400px;
-}
-
-
-.buyer-visualizar-box {
-  text-align: center;
-}
-
-.buyer-big-btn {
-  background: #7ca6ff;
-  padding: 10px 30px;
-  border-radius: 20px;
-  border: none;
-  color: white;
-  font-weight: bold;
-  margin-bottom: 20px;
-  cursor: pointer;
-}
-
-
-.buyer-view-tabs,
-.buyer-mini-tabs {
+.buyer-view-tabs {
   display: flex;
   justify-content: center;
-  gap: 15px;
-  margin: 10px 0;
+  gap: 20px;
+  margin-top: 20px;
 }
 
-.buyer-view-tabs button,
-.buyer-mini-tabs button {
+.buyer-view-tabs button {
   background: #c7d6ff;
-  padding: 8px 18px;
+  padding: 10px 25px;
+  border-radius: 15px;
   border: none;
-  border-radius: 12px;
-  font-weight: bold;
   cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.buyer-view-tabs button:hover {
+  background: #e4eaff;
 }
 
 
 .buyer-info-box {
   background: #061d55;
-  color: white;
-  width: 80%;
+  width: 90%;
   margin: 30px auto;
-  padding: 25px;
-  border-radius: 15px;
-  font-size: 16px;
-}
-
-
-.buyer-pedido-box table {
-  width: 100%;
+  padding: 30px;
+  border-radius: 20px;
   color: white;
-  margin-bottom: 15px;
-}
-
-.buyer-pedido-btn {
-  background: #7ca6ff;
-  padding: 8px 18px;
-  border-radius: 10px;
-  border: none;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-
-.buyer-container.collapsed .buyer-sidebar {
-  width: 60px;
-  padding: 20px 10px;
-}
-
-.buyer-container.collapsed .buyer-menu button {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.buyer-container.collapsed .buyer-username,
-.buyer-container.collapsed .buyer-hello {
-  opacity: 0;
-}
-
-.buyer-container.collapsed .buyer-arrow {
-  margin-left: 5px;
 }
 
 
@@ -175,46 +123,42 @@
   background: #061d55;
   padding: 30px;
   width: 90%;
-  margin: 10px auto;
-  border-radius: 12px;
+  margin: 20px auto;
+  border-radius: 20px;
   color: white;
 }
 
 
 .cadastro-pedido-tabela {
   width: 100%;
-  text-align: center;
-  margin-bottom: 25px;
-  border-spacing: 20px 15px;
+  border-collapse: separate;
+  border-spacing: 20px 20px; 
 }
 
-.cadastro-pedido-tabela th {
-  background: #7ca6ff;
-  padding: 8px 10px;
-  border-radius: 12px;
-  color: white;
-  font-size: 14px;
+.cadastro-pedido-tabela td {
+  padding: 0 10px; 
 }
+
 
 .cadastro-pedido-tabela input {
-  width: 120px;
-  padding: 10px;
-  border-radius: 10px;
+  border-radius: 12px;
+  padding: 12px 15px;
+  width: 100%;
   border: none;
-  text-align: center;
-  font-size: 14px;
+  background: white;
 }
 
 
 .imagem-importar {
-  margin-top: 20px;
+  margin-top: 10px;
+  display: inline-block;
 }
 
 .imagem-importar label {
   background: white;
   color: #001d4a;
   padding: 10px 18px;
-  border-radius: 10px;
+  border-radius: 12px;
   cursor: pointer;
   display: inline-block;
   font-weight: bold;
@@ -227,24 +171,15 @@
 
 .btn-concluir {
   background: #7ca6ff;
-  padding: 10px 20px;
-  border-radius: 15px;
+  padding: 12px 35px;
+  border-radius: 20px;
   border: none;
   color: white;
   font-weight: bold;
-  float: right;
   cursor: pointer;
+  margin-left: 20px;
 }
 
-
-.cadastro-geral-box {
-  background: #061d55;
-  width: 85%;
-  margin: 40px auto 0 auto;
-  padding: 40px;
-  border-radius: 20px;
-  color: white;
-}
 
 
 .linha-inputs {
@@ -253,125 +188,50 @@
   margin-bottom: 25px;
 }
 
-
-.linha-inputs input {
-  background: white;
-  border: none;
-  padding: 12px 15px;
-  border-radius: 12px;
-  width: 100%;
-  flex: 1;
-  font-size: 14px;
-  text-align: center;
-}
-
-
+.linha-inputs input,
 .linha-inputs textarea {
   background: white;
   border: none;
   padding: 12px 15px;
   border-radius: 12px;
-  width: 100%;
-  height: 90px;
+  flex: 1;
   font-size: 14px;
+}
+
+.linha-inputs textarea {
+  height: 90px;
   resize: none;
 }
 
-
-.btn-salvar {
+.btn-salvar,
+.btn-adicionar,
+.btn-adicionar-endereco {
   background: #7ca6ff;
-  padding: 12px 30px;
+  padding: 12px 25px;
   border-radius: 15px;
   border: none;
   color: white;
   font-weight: bold;
-  float: right;
   cursor: pointer;
   margin-top: 20px;
 }
 
 
-.cadastro-contato-box {
-  background: #061d55;
-  width: 85%;
-  margin: 40px auto 0 auto;
-  padding: 40px;
-  border-radius: 20px;
-  color: white;
+.imagem-importar {
+  margin-left: 30px;
 }
 
 
-.cadastro-contato-box .linha-inputs {
-  display: flex;
-  gap: 25px;
-  margin-bottom: 25px;
+.cadastro-pedido-tabela td:first-child {
+  width: 220px; 
 }
 
 
-.cadastro-contato-box input {
-  width: 100%;
-  background: white;
-  border: none;
-  padding: 12px 15px;
-  border-radius: 12px;
-  font-size: 14px;
-  text-align: center;
-  flex: 1;
+
+.buyer-container.collapsed .menu-item {
+  font-size: 12px;     
+  padding: 8px 6px;         
+  text-align: center;       
+  white-space: normal;     
+  line-height: 1.1;         
 }
-
-.btn-adicionar {
-  background: #7ca6ff;
-  padding: 10px 25px;
-  border-radius: 15px;
-  border: none;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-
-.cadastro-endereco-box {
-  background: #061d55;
-  width: 85%;
-  margin: 40px auto 0 auto;
-  padding: 40px;
-  border-radius: 20px;
-  color: white;
-}
-
-
-.cadastro-endereco-box .linha-inputs {
-  display: flex;
-  gap: 25px;
-  margin-bottom: 25px;
-}
-
-
-.cadastro-endereco-box input {
-  background: white;
-  border: none;
-  padding: 12px 15px;
-  border-radius: 12px;
-  font-size: 14px;
-  text-align: center;
-  flex: 1;
-}
-
-
-.cadastro-endereco-box .campo-grande {
-  width: 300px;
-  flex: none;
-}
-
-
-.btn-adicionar-endereco {
-  background: #7ca6ff;
-  padding: 10px 25px;
-  border-radius: 15px;
-  border: none;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  float: right;
-}
-

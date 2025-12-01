@@ -73,10 +73,6 @@ export default function Seller() {
         {}
         <div className="seller-header">
           <span>{titles[selectedPage]}</span>
-
-          {selectedPage === "dados" && (
-            <button className="seller-edit-btn">Editar</button>
-          )}
         </div>
 
         {}

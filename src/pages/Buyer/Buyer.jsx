@@ -14,87 +14,59 @@ export default function Buyer() {
     cadastrar: "Cadastrar"
   };
 
-  const [products, setProducts] = useState([]);
-
-
-  const [suppliers, setSuppliers] = useState([]);
-
-  const fetchSuppliers = async () => {
-  try {
-    const response = await fetch("https://centraldecompras.onrender.com/suppliers");
-    const data = await response.json();
-    setSuppliers(data);
-  } catch (err) {
-    console.error("Erro ao buscar fornecedores:", err);
-  }
- };
-
- const fetchProducts = async () => {
-  try {
-    const response = await fetch("https://centraldecompras.onrender.com/products");
-    const data = await response.json();
-    setProducts(data);
-  } catch (err) {
-    console.error("Erro ao buscar produtos:", err);
-  }
-};
-
-
-
-
-
   return (
     <div className={`buyer-container ${collapsed ? "collapsed" : ""}`}>
 
-      {}
+      {/* SIDEBAR */}
       <aside className="buyer-sidebar">
-        <h2 className="buyer-hello">Olá!</h2>
-        <p className="buyer-username">*nome do usuário cadastrado*</p>
+        {!collapsed && (
+          <>
+            <h2 className="buyer-hello">Olá!</h2>
+            <p className="buyer-username">*nome do usuário cadastrado*</p>
+          </>
+        )}
 
         <nav className="buyer-menu">
+
           <button
             className={`menu-item ${selectedPage === "menu" ? "selected" : ""}`}
             onClick={() => { setSelectedPage("menu"); setSelectedTab(null); }}
           >
-            Menu principal
+            <span>Menu principal</span>
           </button>
 
           <button
             className={`menu-item ${selectedPage === "fornecedor" ? "selected" : ""}`}
-            onClick={() => {
-            setSelectedPage("fornecedor");
-            setSelectedTab(null);
-            fetchSuppliers();   
-            }}
+            onClick={() => { setSelectedPage("fornecedor"); setSelectedTab(null); }}
           >
-            Fornecedor
+            <span>Fornecedor</span>
           </button>
 
           <button
             className={`menu-item ${selectedPage === "visualizar" ? "selected" : ""}`}
             onClick={() => { setSelectedPage("visualizar"); setSelectedTab(null); }}
           >
-            Visualizar
+            <span>Visualizar</span>
           </button>
 
           <button
             className={`menu-item ${selectedPage === "cadastrar" ? "selected" : ""}`}
             onClick={() => { setSelectedPage("cadastrar"); setSelectedTab(null); }}
           >
-            Cadastrar
+            <span>Cadastrar</span>
           </button>
+
         </nav>
 
-        {}
         <button className="buyer-arrow" onClick={() => setCollapsed(!collapsed)}>
-          {collapsed ? "<" : ">"}
+          <span>{collapsed ? ">" : "<"}</span>
         </button>
       </aside>
 
-      {}
+      {/* MAIN */}
       <main className="buyer-main">
 
-        {}
+        {/* HEADER */}
         {selectedPage !== "visualizar" && selectedPage !== "cadastrar" && (
           <div className="buyer-header">
             <span>{titles[selectedPage]}</span>
@@ -103,210 +75,128 @@ export default function Buyer() {
 
         <div className="buyer-content">
 
-          {}
           {selectedPage === "menu" && <div className="buyer-empty"></div>}
 
-          {}
           {selectedPage === "fornecedor" && (
-  <div className="buyer-box">
-    <div className="supplier-list">
-      {suppliers.length === 0 ? (
-        <p>Nenhum fornecedor encontrado.</p>
-      ) : (
-        <table className="supplier-table">
-          <thead>
-            <tr>
-              <th>Nome</th>
-              <th>Categoria</th>
-              <th>E-mail</th>
-              <th>Telefone</th>
-              <th>Status</th>
-            </tr>
-          </thead>
+            <div className="buyer-box">
+              <p className="buyer-placeholder">Aqui puxa os fornecedores</p>
+            </div>
+          )}
 
-          <tbody>
-            {suppliers.map((s) => (
-              <tr key={s._id}>
-                <td>{s.supplier_name}</td>
-                <td>{s.supplier_category}</td>
-                <td>{s.contact_email}</td>
-                <td>{s.phone_number}</td>
-                <td>{s.status}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      )}
-    </div>
-  </div>
-)}
-
-
-          {}
+          {/* CADASTRAR */}
           {selectedPage === "cadastrar" && (
             <div className="buyer-visualizar-box">
 
               <div className="buyer-view-tabs">
-                <button onClick={() => setSelectedTab("pedido")}>Pedido</button>
-                <button onClick={() => setSelectedTab("geral")}>Geral</button>
-                <button onClick={() => setSelectedTab("endereco")}>Endereço</button>
-                <button onClick={() => setSelectedTab("contato")}>Contato</button>
+                <button onClick={() => setSelectedTab("pedido")}><span>Pedido</span></button>
+                <button onClick={() => setSelectedTab("geral")}><span>Geral</span></button>
+                <button onClick={() => setSelectedTab("endereco")}><span>Endereço</span></button>
+                <button onClick={() => setSelectedTab("contato")}><span>Contato</span></button>
               </div>
 
               <div className="buyer-info-box">
 
+                {/* Pedido */}
                 {selectedTab === "pedido" && (
-  <div className="cadastro-pedido-box">
+                  <div className="cadastro-pedido-box">
 
-    <table className="cadastro-pedido-tabela">
-      
+                    <table className="cadastro-pedido-tabela">
+                      <tbody>
+                        <tr>
+                          <td><input type="text" placeholder="Código" /></td>
+                          <td><input type="text" placeholder="Produto" /></td>
+                          <td><input type="text" placeholder="Embalagens" /></td>
+                          <td><input type="number" placeholder="Qtde" /></td>
+                          <td><input type="number" placeholder="Valor total" /></td>
+                        </tr>
+                      </tbody>
+                    </table>
 
-      <tbody>
-        <tr>
-          <td><input type="text" placeholder="Código" /></td>
-          <td><input type="text" placeholder="Produto" /></td>
-          <td><input type="text" placeholder="Embalagens" /></td>
-          <td><input type="number" placeholder="Qtde" /></td>
-          <td><input type="number" placeholder="Valor total" /></td>
-        </tr>
-      </tbody>
-    </table>
+                    <div className="imagem-importar">
+                      <input type="file" id="imgUpload" />
+                      <label htmlFor="imgUpload">Imagem (importar)</label>
+                    </div>
 
-    <div className="imagem-importar">
-      <input type="file" id="imgUpload" />
-      <label htmlFor="imgUpload">Imagem (importar)</label>
-    </div>
+                    <button className="btn-concluir"><span>Concluir pedido</span></button>
 
-    <button className="btn-concluir">Concluir pedido</button>
-  </div>
-)}
+                  </div>
+                )}
 
-               {selectedTab === "geral" && (
-  <div className="cadastro-geral-box">
+                {/* Geral */}
+                {selectedTab === "geral" && (
+                  <div className="cadastro-geral-box">
 
-    <div className="linha-inputs">
-      <input type="text" placeholder="Razão Social" />
-      <input type="text" placeholder="CNPJ" />
-      <input type="text" placeholder="Nome fantasia" />
-      <input type="text" placeholder="Classificação" />
-    </div>
+                    <div className="linha-inputs">
+                      <input type="text" placeholder="Razão Social" />
+                      <input type="text" placeholder="CNPJ" />
+                      <input type="text" placeholder="Nome fantasia" />
+                      <input type="text" placeholder="Classificação" />
+                    </div>
 
-    <div className="linha-inputs">
-      <textarea placeholder="Observações"></textarea>
-    </div>
+                    <div className="linha-inputs">
+                      <textarea placeholder="Observações"></textarea>
+                    </div>
 
-    <button className="btn-salvar">Salvar</button>
+                    <button className="btn-salvar"><span>Salvar</span></button>
 
-  </div>
-)}
+                  </div>
+                )}
 
-               {selectedTab === "endereco" && (
-  <div className="cadastro-endereco-box">
+                {/* Endereço */}
+                {selectedTab === "endereco" && (
+                  <div className="cadastro-endereco-box">
 
-    <div className="linha-inputs">
-      <input type="text" placeholder="CEP" />
-      <input type="text" placeholder="Cidade" />
-      <input type="text" placeholder="Logradouro" />
-      <input type="text" placeholder="Bairro" />
-    </div>
+                    <div className="linha-inputs">
+                      <input type="text" placeholder="CEP" />
+                      <input type="text" placeholder="Cidade" />
+                      <input type="text" placeholder="Logradouro" />
+                      <input type="text" placeholder="Bairro" />
+                    </div>
 
-    <div className="linha-inputs">
-      <input type="text" placeholder="País" className="campo-grande" />
-    </div>
+                    <button className="btn-adicionar-endereco"><span>Adicionar</span></button>
 
-    <button className="btn-adicionar-endereco">Adicionar</button>
+                  </div>
+                )}
 
-  </div>
-)}
+                {/* Contato */}
+                {selectedTab === "contato" && (
+                  <div className="cadastro-contato-box">
 
+                    <div className="linha-inputs">
+                      <input type="text" placeholder="Nome do contato" />
+                      <input type="text" placeholder="Celular" />
+                      <input type="text" placeholder="E-mail" />
+                      <input type="text" placeholder="Telefone" />
+                    </div>
 
-               {selectedTab === "contato" && (
-  <div className="cadastro-contato-box">
+                    <button className="btn-adicionar"><span>Adicionar</span></button>
 
-    <div className="linha-inputs">
-      <input type="text" placeholder="Nome do contato" />
-      <input type="text" placeholder="Celular" />
-      <input type="text" placeholder="E-mail" />
-      <input type="text" placeholder="Telefone" />
-    </div>
-
-    <button className="btn-adicionar">Adicionar</button>
-
-  </div>
-)}
+                  </div>
+                )}
 
               </div>
+
             </div>
           )}
 
-          {}
+          {/* VISUALIZAR */}
           {selectedPage === "visualizar" && (
             <div className="buyer-visualizar-box">
 
               <div className="buyer-view-tabs">
-                <button
-  onClick={() => {
-    setSelectedTab("produto");
-    fetchProducts();  // faz o GET de todos os produtos
-  }}
->
-  Produto
-</button>
-                <button onClick={() => setSelectedTab("campanha")}>Campanha</button>
-                <button onClick={() => setSelectedTab("tabela")}>Tabela de preço</button>
-                <button onClick={() => setSelectedTab("catalogo")}>Catálogo digital</button>
+                <button onClick={() => setSelectedTab("produto")}><span>Produto</span></button>
+                <button onClick={() => setSelectedTab("campanha")}><span>Campanha</span></button>
+                <button onClick={() => setSelectedTab("tabela")}><span>Tabela de preço</span></button>
+                <button onClick={() => setSelectedTab("catalogo")}><span>Catálogo digital</span></button>
               </div>
 
               <div className="buyer-info-box">
-
-                {selectedTab === "produto" && (
-  <div className="product-list">
-
-    {products.length === 0 ? (
-      <p>Nenhum produto encontrado.</p>
-    ) : (
-      <table className="product-table">
-        <thead>
-          <tr>
-            <th>Nome</th>
-            <th>Descrição</th>
-            <th>Preço</th>
-            <th>Quantidade</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          {products.map((p) => (
-            <tr key={p._id}>
-              <td>{p.name}</td>
-              <td>{p.description}</td>
-              <td>R$ {p.price}</td>
-              <td>{p.stock_quantity}</td>
-              <td>{p.status}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    )}
-
-  </div>
-)}
-
-
-                {selectedTab === "campanha" && (
-                  <p>Aqui aparece a lista de campanhas</p>
-                )}
-
-                {selectedTab === "tabela" && (
-                  <p>Aqui aparece a tabela de preços</p>
-                )}
-
-                {selectedTab === "catalogo" && (
-                  <p>Aqui aparece o catálogo digital</p>
-                )}
-
+                {selectedTab === "produto" && (<p>Aqui o backend vai trazer a tabela de produtos</p>)}
+                {selectedTab === "campanha" && (<p>Aqui aparece a lista de campanhas</p>)}
+                {selectedTab === "tabela" && (<p>Aqui aparece a tabela de preços</p>)}
+                {selectedTab === "catalogo" && (<p>Aqui aparece o catálogo digital</p>)}
               </div>
+
             </div>
           )}
 

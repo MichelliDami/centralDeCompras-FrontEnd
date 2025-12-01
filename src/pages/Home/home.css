@@ -54,9 +54,10 @@
   background: #6fa3ff;
   border: none;
   padding: 10px 25px;
-  color: white;
+  color: #ffff;
   font-weight: bold;
   border-radius: 40px;
+  width: 150px;
   cursor: pointer;
   transition: 0.2s;
 }
@@ -68,4 +69,11 @@
 
 .admin-btn {
   margin-top: 10px;
+}
+
+.admin-btn {
+  margin-top: 10px;
+  color: #ffffff !important;
+  font-weight: 900 !important;
+  background: #6fa3ff;
 }
